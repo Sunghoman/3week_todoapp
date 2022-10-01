@@ -28,7 +28,7 @@ const Layout = (props) => {
       id: nextId.current,
       title,
       body,
-      isDone: false
+      isDone: "완료!"
     }
     props.setPosts([...props.posts, post])
     setInputs({

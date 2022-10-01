@@ -16,7 +16,7 @@ const Todo = ({ posts, onRemove, setPosts }) => {
                   copy.splice(i, 1);
                   setPosts(copy);
                 }}>삭제하기</button>
-                <button>완료</button>
+                <button>{ posts[i].isDone }</button>
               </div>
             </div>
           )

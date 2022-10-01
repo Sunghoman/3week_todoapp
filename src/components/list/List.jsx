@@ -3,6 +3,7 @@ import './style.css'
 import Todo from '../todo/Todo';
 
 const List = ({ posts, onRemove, setPosts }) => {
+
   return(
     <div>
       <h2>Working...</h2>
