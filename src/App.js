@@ -8,7 +8,7 @@ function App() {
       id: 0,
       title: '리액트 공부하기',
       body: '리액트 기초를 공부해봅시다',
-      isDone: "완료!"
+      isDone: "취소"
     },
     {
       id: 1,

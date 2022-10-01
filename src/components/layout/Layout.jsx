@@ -23,19 +23,22 @@ const Layout = (props) => {
   }
 
   const nextId = useRef(4);
+
   const onCreate = () => {
-    const post = {
-      id: nextId.current,
-      title,
-      body,
-      isDone: "완료!"
+    if (title && body) {
+      const post = {
+        id: nextId.current,
+        title,
+        body,
+        isDone: "완료!"
+      }
+      props.setPosts([...props.posts, post])
+      setInputs({
+        title: '',
+        body: ''
+      })
+      nextId.current += 1;
     }
-    props.setPosts([...props.posts, post])
-    setInputs({
-      title: '',
-      body: ''
-    })
-    nextId.current += 1;
   }
 
   const onRemove = id => {

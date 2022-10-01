@@ -1,37 +1,24 @@
 import './style.css'
 
-const Todo = ({ posts, onRemove, setPosts }) => {
-  
+const Todo = ({ posts, setPosts, i, todo, setBtn }) => {
+  // console.log("궁금한거 : " + [...posts])
   return(
     <div>
-      {
-        posts.map((a, i) => {
-          return(
-            <div className='card' key={ posts[i].id }>
-              <h3>{ posts[i].title }</h3>
-              <p>{ posts[i].body }</p>
-              <div className='buttons'>
-                <button onClick={() => {
-                  let copy = [...posts]
-                  copy.splice(i, 1);
-                  setPosts(copy);
-                }}>삭제하기</button>
-                <button>{ posts[i].isDone }</button>
-              </div>
-            </div>
-          )
-        })
-      }
+      <div className='card' key={ todo.id }>
+        <h3>{ todo.title }</h3>
+        <p>{ todo.body }</p>
+        <div className='buttons'>
+          <button onClick={(e) => {
+            const todo_box = e.target.parentElement.parentElement
+            todo_box.remove()
+          }}>삭제하기</button>
+          <button onClick={() => {
+            setBtn(todo);
+          }}>{ todo.isDone }</button>
+        </div>
+      </div>
     </div>
-  )
-    // {
-    //   [1,2,3].map(() => {
-    //     reuturn(
-    //       <div>asd</div>
-    //     )
-    //   })
-    // }
-  
+  )  
 };
 
 export default Todo;

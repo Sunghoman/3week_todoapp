@@ -15,7 +15,7 @@ const Form = ({ posts, setPosts, title, body, onChange, onCreate, onRemove }) =>
       <div className='input'>
         <div className='input-post'>
           <label for="title">제목</label>
-          <input type="text" id="title" name="title" onChange={onChange} value={title} onKeyPress={onKeyPress}/>
+          <input type="text" autoFocus id="title" name="title" onChange={onChange} value={title} onKeyPress={onKeyPress}/>
 
           <label for="comment">내용</label>
           <input type="text" id="comment" name="body" onChange={onChange} value={body} onKeyPress={onKeyPress}/>
