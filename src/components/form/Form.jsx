@@ -2,25 +2,16 @@ import './style.css'
 
 import List from '../list/List';
 
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect } from 'react';
+
+
 
 const Form = ({ posts, setPosts, title, body, onChange, onCreate, onRemove }) => {
 
- //
- const titleInput = useRef(null);
-
+  const titleInput = useRef(null);
   useEffect(() => {
-    if (titleInput.current) {
       titleInput.current.focus();
-    }
   }, []);
-
-  // useCallback 쓸 때
-  // const titleInput = useCallback((inputElement) => {
-  //   if (inputElement) {
-  //     inputElement.focus();
-  //   }
-  // }, []);
 
   const onKeyPress = (e) => {
     if(e.key === 'Enter') {
